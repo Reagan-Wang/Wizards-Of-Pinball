@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://wfbwdjf5xo6f"]
+
+[ext_resource type="PackedScene" uid="uid://bv3tpp3ntvyon" path="res://wall.tscn" id="1_jnxbs"]
+[ext_resource type="Script" uid="uid://cmgmx5rnsded3" path="res://player_controls.gd" id="2_lhvss"]
+[ext_resource type="PackedScene" uid="uid://bwbhtcefy0u2s" path="res://paddle.tscn" id="3_f6qlb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jnxbs"]
+bounce = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e42j5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wd7vd"]
+
+[node name="PinballGame" type="Node" unique_id=1322545857]
+
+[node name="PlayArea" type="Node2D" parent="." unique_id=1726389233]
+
+[node name="WallLeft" parent="." unique_id=1812716991 instance=ExtResource("1_jnxbs")]
+position = Vector2(243.00002, 316)
+scale = Vector2(0.16000003, 4.731488)
+
+[node name="WallRight" parent="." unique_id=850075681 instance=ExtResource("1_jnxbs")]
+position = Vector2(650, 316)
+scale = Vector2(0.16000003, 4.731488)
+
+[node name="WallBottom" parent="." unique_id=1350899192 instance=ExtResource("1_jnxbs")]
+position = Vector2(447, 610)
+scale = Vector2(3.33943, 0.14817214)
+
+[node name="WallTop" parent="." unique_id=240833738 instance=ExtResource("1_jnxbs")]
+position = Vector2(447, 21)
+scale = Vector2(3.33943, 0.14817214)
+
+[node name="Player Controls" type="Node2D" parent="." unique_id=489981905]
+position = Vector2(375, 552)
+script = ExtResource("2_lhvss")
+
+[node name="LeftPaddle" parent="Player Controls" unique_id=342407272 instance=ExtResource("3_f6qlb")]
+rotation = 0.43633232
+
+[node name="RightPaddle" parent="Player Controls" unique_id=2084946677 instance=ExtResource("3_f6qlb")]
+position = Vector2(177, 0)
+rotation = -0.43633232
+scale = Vector2(-0.3, 0.3)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=313413253]
+position = Vector2(417, 460)
+physics_material_override = SubResource("PhysicsMaterial_jnxbs")
+gravity_scale = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=553992620]
+shape = SubResource("CircleShape2D_e42j5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D" unique_id=155899515]
+position = Vector2(0.12514162, 0.1250019)
+scale = Vector2(19.772112, 19.750006)
+mesh = SubResource("SphereMesh_wd7vd")
