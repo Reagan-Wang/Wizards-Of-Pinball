@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwbhtcefy0u2s" path="res://paddle.tscn" id="3_f6qlb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jnxbs"]
-bounce = 0.3
+bounce = 0.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e42j5"]
 
@@ -27,6 +27,16 @@ scale = Vector2(0.16000003, 4.731488)
 position = Vector2(447, 610)
 scale = Vector2(3.33943, 0.14817214)
 
+[node name="WallBottom2" parent="." unique_id=881340664 instance=ExtResource("1_jnxbs")]
+position = Vector2(169.99997, 455)
+rotation = 0.43633232
+scale = Vector2(3.33943, 0.14817214)
+
+[node name="WallBottom3" parent="." unique_id=352671364 instance=ExtResource("1_jnxbs")]
+position = Vector2(759, 454)
+rotation = -0.43633232
+scale = Vector2(3.33943, 0.14817214)
+
 [node name="WallTop" parent="." unique_id=240833738 instance=ExtResource("1_jnxbs")]
 position = Vector2(447, 21)
 scale = Vector2(3.33943, 0.14817214)
@@ -44,7 +54,7 @@ rotation = -0.43633232
 scale = Vector2(-0.3, 0.3)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=313413253]
-position = Vector2(417, 460)
+position = Vector2(277, 412)
 physics_material_override = SubResource("PhysicsMaterial_jnxbs")
 gravity_scale = 0.3
 
