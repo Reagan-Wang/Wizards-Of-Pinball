@@ -14,5 +14,4 @@ func _add_points(points : int):
 
 func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("Reset")):
-		print("Reset")
 		_reset_round()

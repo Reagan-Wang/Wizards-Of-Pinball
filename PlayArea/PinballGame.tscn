@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://wfbwdjf5xo6f"]
 
 [ext_resource type="PackedScene" uid="uid://bv3tpp3ntvyon" path="res://wall.tscn" id="1_jnxbs"]
-[ext_resource type="Script" uid="uid://ddpls12jbu5q1" path="res://PlayArea/pinball_game.gd" id="1_lhvss"]
-[ext_resource type="Script" uid="uid://cmgmx5rnsded3" path="res://player_controls.gd" id="2_lhvss"]
-[ext_resource type="PackedScene" uid="uid://bwbhtcefy0u2s" path="res://paddle.tscn" id="3_f6qlb"]
+[ext_resource type="Script" uid="uid://ddpls12jbu5q1" path="res://Scripts/pinball_game.gd" id="1_lhvss"]
+[ext_resource type="Script" uid="uid://cmgmx5rnsded3" path="res://Scripts/player_controls.gd" id="2_lhvss"]
+[ext_resource type="PackedScene" uid="uid://bwbhtcefy0u2s" path="res://PlayArea/paddle.tscn" id="3_f6qlb"]
 [ext_resource type="PackedScene" uid="uid://dxyy5hvtvxpe4" path="res://PlayArea/default_pinball.tscn" id="5_1i4mv"]
-[ext_resource type="Script" uid="uid://cdbid6k1mojcx" path="res://PlayArea/base_pinball.gd" id="6_m1j2t"]
+[ext_resource type="Script" uid="uid://cdbid6k1mojcx" path="res://Scripts/base_pinball.gd" id="6_m1j2t"]
+[ext_resource type="PackedScene" uid="uid://bs05jstcmfe6f" path="res://PlayArea/basic_round_bumper.tscn" id="7_m1j2t"]
 
 [node name="PinballGame" type="Node" unique_id=1322545857]
 script = ExtResource("1_lhvss")
@@ -54,3 +55,15 @@ scale = Vector2(-0.3, 0.3)
 [node name="InitialBall" parent="." unique_id=266393791 instance=ExtResource("5_1i4mv")]
 position = Vector2(277, 412)
 script = ExtResource("6_m1j2t")
+
+[node name="BasicRoundBumper" parent="." unique_id=1066491922 instance=ExtResource("7_m1j2t")]
+position = Vector2(324, 255)
+
+[node name="BasicRoundBumper2" parent="." unique_id=24556866 instance=ExtResource("7_m1j2t")]
+position = Vector2(401, 324)
+
+[node name="BasicRoundBumper3" parent="." unique_id=1455663669 instance=ExtResource("7_m1j2t")]
+position = Vector2(554, 279)
+
+[node name="BasicRoundBumper4" parent="." unique_id=694128823 instance=ExtResource("7_m1j2t")]
+position = Vector2(479, 286)
