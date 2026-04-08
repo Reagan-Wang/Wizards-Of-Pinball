@@ -10,3 +10,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		linear_velocity = Vector2.ZERO
 		angular_velocity = 0.0
 		reset_state = false
+
+func _collide_with_element(body : Node) -> void:
+	if body is ScoringElement:
+		body as ScoringElement
+		body.collide()

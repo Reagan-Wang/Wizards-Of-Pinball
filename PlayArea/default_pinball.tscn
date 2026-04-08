@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dxyy5hvtvxpe4"]
 
+[ext_resource type="Script" uid="uid://cdbid6k1mojcx" path="res://Scripts/base_pinball.gd" id="1_k08b8"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jnxbs"]
 bounce = 0.2
 
@@ -11,6 +13,9 @@ bounce = 0.2
 physics_material_override = SubResource("PhysicsMaterial_jnxbs")
 gravity_scale = 0.3
 continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_k08b8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=504783719]
 shape = SubResource("CircleShape2D_e42j5")
@@ -19,3 +24,5 @@ shape = SubResource("CircleShape2D_e42j5")
 position = Vector2(0.12514162, 0.1250019)
 scale = Vector2(19.772112, 19.750006)
 mesh = SubResource("SphereMesh_wd7vd")
+
+[connection signal="body_entered" from="." to="." method="_collide_with_element"]

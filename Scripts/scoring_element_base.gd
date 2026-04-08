@@ -1,5 +1,5 @@
-extends Node2D
-class_name ScoringElementBase
+extends StaticBody2D
+class_name ScoringElement
 
 func collide():
 	print("Collided")
