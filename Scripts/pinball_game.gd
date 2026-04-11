@@ -1,6 +1,9 @@
 extends Node
 
 @onready var pinball : BasePinball = $InitialBall
+@onready var enemy_manager : EnemyManager = $EnemyManager
+@onready var player : Player = $Player
+
 var score : int
 
 var board_state : BOARD_STATE
@@ -18,6 +21,8 @@ func _ready() -> void:
 
 func _reset_round():
 	pinball.reset_state = true
+	enemy_manager.reset()
+	player.reset()
 
 func _add_points(points : int):
 	score += points

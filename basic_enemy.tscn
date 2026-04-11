@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdysaodldwaxo"]
+
+[ext_resource type="Script" uid="uid://bnci8kqojweq3" path="res://Scripts/Enemies/basic_enemy.gd" id="1_naotq"]
+[ext_resource type="Texture2D" uid="uid://c1a6ums4wtcwo" path="res://icon.svg" id="2_rwafm"]
+
+[node name="BasicEnemy" type="Node2D" unique_id=789303034]
+script = ExtResource("1_naotq")
+damage = 3
+max_health = 20
+default_activation_time = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=438645431]
+texture = ExtResource("2_rwafm")
+
+[node name="Label" type="Label" parent="." unique_id=1549199442]
+offset_left = -72.0
+offset_top = 72.0
+offset_right = 70.0
+offset_bottom = 148.0

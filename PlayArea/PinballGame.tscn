@@ -2,13 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://bv3tpp3ntvyon" path="res://wall.tscn" id="1_jnxbs"]
 [ext_resource type="Script" uid="uid://ddpls12jbu5q1" path="res://Scripts/pinball_game.gd" id="1_lhvss"]
+[ext_resource type="Script" uid="uid://ca4dkdilrixaj" path="res://PlayArea/player.gd" id="2_kkg4w"]
 [ext_resource type="Script" uid="uid://cmgmx5rnsded3" path="res://Scripts/player_controls.gd" id="2_lhvss"]
 [ext_resource type="PackedScene" uid="uid://bwbhtcefy0u2s" path="res://PlayArea/paddle.tscn" id="3_f6qlb"]
 [ext_resource type="PackedScene" uid="uid://dxyy5hvtvxpe4" path="res://PlayArea/default_pinball.tscn" id="5_1i4mv"]
-[ext_resource type="PackedScene" uid="uid://bs05jstcmfe6f" path="res://PlayArea/basic_round_bumper.tscn" id="7_m1j2t"]
+[ext_resource type="PackedScene" uid="uid://bs05jstcmfe6f" path="res://PlayArea/bumper_basic.tscn" id="7_m1j2t"]
+[ext_resource type="Script" uid="uid://d2mj0jquour2y" path="res://Scripts/Enemies/enemy_manager.gd" id="7_xr68f"]
+[ext_resource type="PackedScene" uid="uid://cdysaodldwaxo" path="res://basic_enemy.tscn" id="8_xr68f"]
+[ext_resource type="PackedScene" uid="uid://cxe81nxb2tf7s" path="res://PlayArea/bumper_basic_shield.tscn" id="10_35sh4"]
+[ext_resource type="PackedScene" uid="uid://w8v1akjymbx3" path="res://PlayArea/bumper_basic_attack.tscn" id="11_uw60f"]
 
 [node name="PinballGame" type="Node" unique_id=1322545857]
 script = ExtResource("1_lhvss")
+
+[node name="Player" type="Node" parent="." unique_id=2009422183]
+script = ExtResource("2_kkg4w")
+
+[node name="Info" type="Label" parent="Player" unique_id=1984030957]
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 213.0
+offset_bottom = 235.0
 
 [node name="PlayArea" type="Node2D" parent="." unique_id=1726389233]
 
@@ -54,14 +68,28 @@ scale = Vector2(-0.3, 0.3)
 [node name="InitialBall" parent="." unique_id=266393791 instance=ExtResource("5_1i4mv")]
 position = Vector2(277, 412)
 
-[node name="BasicRoundBumper" parent="." unique_id=1066491922 instance=ExtResource("7_m1j2t")]
-position = Vector2(324, 255)
+[node name="EnemyManager" type="Node" parent="." unique_id=621028243 node_paths=PackedStringArray("enemy_pool")]
+script = ExtResource("7_xr68f")
+enemy_pool = [NodePath("BasicEnemy")]
 
-[node name="BasicRoundBumper2" parent="." unique_id=24556866 instance=ExtResource("7_m1j2t")]
-position = Vector2(401, 324)
+[node name="BasicEnemy" parent="EnemyManager" unique_id=789303034 instance=ExtResource("8_xr68f")]
+position = Vector2(934, 133)
+default_activation_time = 5.0
 
-[node name="BasicRoundBumper3" parent="." unique_id=1455663669 instance=ExtResource("7_m1j2t")]
-position = Vector2(554, 279)
+[node name="BasicAttack" parent="." unique_id=492176997 instance=ExtResource("11_uw60f")]
+position = Vector2(390, 236)
 
-[node name="BasicRoundBumper4" parent="." unique_id=694128823 instance=ExtResource("7_m1j2t")]
-position = Vector2(479, 286)
+[node name="BasicAttack2" parent="." unique_id=442085468 instance=ExtResource("11_uw60f")]
+position = Vector2(563, 247)
+
+[node name="BasicShield" parent="." unique_id=1806354715 instance=ExtResource("10_35sh4")]
+position = Vector2(344, 191)
+
+[node name="BasicShield2" parent="." unique_id=1917720992 instance=ExtResource("10_35sh4")]
+position = Vector2(501, 171)
+
+[node name="BasicRoundBumper" parent="." unique_id=822790819 instance=ExtResource("7_m1j2t")]
+position = Vector2(317, 301)
+
+[node name="BasicRoundBumper2" parent="." unique_id=46480069 instance=ExtResource("7_m1j2t")]
+position = Vector2(489, 324)
