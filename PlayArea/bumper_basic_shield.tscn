@@ -11,6 +11,7 @@
 [node name="BasicShield" type="StaticBody2D" unique_id=492176997]
 script = ExtResource("1_gse4h")
 shield = 5
+bounce_strength = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=910477307]
 shape = SubResource("CircleShape2D_4jkr3")

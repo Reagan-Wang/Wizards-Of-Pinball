@@ -21,6 +21,7 @@ func activate():
 func reset():
 	health = max_health
 	activation_timer = default_activation_time
+	_update_label()
 
 func _attacked(damage : int):
 	if shield >= damage:
